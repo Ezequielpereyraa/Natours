@@ -1,0 +1,54 @@
+@mixin clearFix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+// Medias Querys
+/*
+0-600px Phone
+600-900px: Tables Portrait
+900-1200p: Tables Landscape;
+[1200 - 1800] is where our normal styles apply
+1800px : big Desktop
+ */
+
+/* Breakpoints Arguments
+ phone
+ tab-port
+ tab-land
+ big-Desktop
+ */
+
+// ORDER: Base + Typography > layout > page Layout > components
+/* 1em = 16px */
+@mixin respond($breakpoint) {
+  @if $breakpoint==phone {
+    @media only screen and (max-width: 37.5em) {
+      // 600px, se divide los 600/16, 16 es el valor por defecto del navegador
+      @content;
+    }
+  }
+
+  @if $breakpoint==tab-port {
+    @media only screen and (max-width: 56.25em) {
+      // 600px, se divide los 900/16, 16 es el valor por defecto del navegador
+      @content;
+    }
+  }
+
+  @if $breakpoint==tab-land {
+    @media only screen and (max-width: 75em) {
+      // 600px, se divide los 1200/16, 16 es el valor por defecto del navegador
+      @content;
+    }
+  }
+
+  @if $breakpoint==big-desktop {
+    @media only screen and (min-width: 112.5em) {
+      @content;
+    }
+  }
+}

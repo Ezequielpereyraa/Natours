@@ -1,0 +1,34 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  // This defines 1rem
+  font-size: 62.5%;
+
+  @include respond(tab-land) {
+    font-size: 40%;
+  }
+
+  @include respond(tab-pot) {
+    font-size: 50%;
+    /* 1rem = 8px 8/16 = 50% */
+  }
+
+  @include respond(phone) {
+    font-size: 35%;
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  background-color: $color-grey-light-1;
+}

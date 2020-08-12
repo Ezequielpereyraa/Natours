@@ -1,0 +1,106 @@
+.btn {
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    border-radius: 10rem;
+    display: inline-block;
+    transition: all 0.2s;
+    position: relative;
+
+    @include respond(tab-port) {
+      font-size: 2.5rem;
+    }
+
+    &:hover {
+      box-shadow: 0 1rem 2rem rgba($color-black, 7);
+      transform: translateY(-3px);
+
+      &::after {
+        transform: scaleX(1.1) scaleY(1.7);
+        opacity: 0;
+      }
+    }
+
+    &:active,
+    &:focus {
+      outline: none;
+      transform: translateY(-1px);
+      box-shadow: 0px 0.5rem 1rem rgba($color-black, 0.4);
+    }
+
+    &::after {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      border: 10rem;
+      position: absolute;
+      border-radius: 10rem;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: 0.8s;
+    }
+  }
+
+  &-green {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $color-white;
+    background-color: $color-Darkgreen;
+    @include respond(tab-port) {
+      margin-top: 5rem;
+    }
+    &::after {
+      background-color: $color-Darkgreen;
+      color: $color-white;
+    }
+  }
+
+  &-white {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background-color: $color-white;
+    color: $color-greyDark;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  &-animation {
+    animation: moveButton 1s ease-in-out 0.75s;
+    animation-fill-mode: backwards;
+  }
+}
+
+.btn__text {
+  &:link,
+  &:visited {
+    color: $color-Darkgreen;
+    display: inline-block;
+    text-decoration: none;
+    font-size: $default-fontSize;
+    border-bottom: 3px solid $color-Darkgreen;
+    padding: 3px;
+    transition: all 0.2s;
+
+    @include respond(tab-port) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &:hover {
+    background-color: $color-Darkgreen;
+    color: $color-white;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.5);
+    transform: translateY(-0.3rem);
+  }
+
+  &:active {
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+    transform: translateY(0rem);
+  }
+}

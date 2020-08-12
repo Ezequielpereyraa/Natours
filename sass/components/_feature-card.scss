@@ -1,0 +1,41 @@
+.feature__card {
+  background-color: rgba($color-white, 0.8);
+  font-size: 1.5rem;
+  padding: 2.4rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.5);
+  transition: transform 0.5s;
+  cursor: pointer;
+
+  @include respond(tab-port) {
+    font-size: 3rem;
+    padding: 3rem
+  }
+
+  &-icon {
+    font-size: 6rem;
+    margin-bottom: 0.5rem;
+    background-image: linear-gradient(to right, $color-lightgreen, $color-Darkgreen);
+    display: inline-block;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    @include respond(tab-port) {
+      font-size: 14rem;
+      margin: 0;
+    }
+  }
+
+  &-text {
+
+    @include respond(tab-port) {
+      font-size: 3rem;
+    }
+  }
+
+  &:hover {
+    transform: translateY(-1rem);
+  }
+}

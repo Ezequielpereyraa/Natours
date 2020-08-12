@@ -1,0 +1,60 @@
+.footer {
+  background-color: $color-bg-footer;
+  padding: 5rem 0;
+
+  &__logo {
+    width: 15rem;
+    height: auto;
+  }
+
+  &__navigation {
+    width: 86%;
+    text-transform: uppercase;
+    color: $color-white;
+    font-size: $default-fontSize;
+    border-top: 2px solid $color-greyDark;
+    text-align: center;
+    @include respond(tab-port) {
+      width: 100%;
+    }
+  }
+
+  &__link {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1rem;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: $color-white;
+    @include respond(tab-port) {
+      padding: 0;
+      margin: 0;
+    }
+    &:not(:last-child) {
+      margin-right: 1.5rem;
+    }
+
+    &:hover {
+      color: $color-Darkgreen;
+      transform: rotate(-5deg) scale(1.1);
+      box-shadow: 0rem 1rem 2.5rem rgba($color-black, 0.25);
+    }
+  }
+
+  &__text {
+    @include respond(tab-port) {
+      width: 100%;
+      font-size: 2.3rem;
+    }
+    width: 86%;
+    @extend .footer__navigation;
+    text-transform: none;
+    text-align: left;
+    float: right;
+
+    &-paragraph {
+      margin-top: 1rem;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+.header {
+  height: 100vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-lightgreen, 0.8),
+      rgba($color-Darkgreen, 0.8)
+    ),
+    url('../img/hero-small.jpg');
+  background-repeat: no-repeat;
+  clip-path: polygon(0 0, 100% 0%, 100% 75vh, 0 100%);
+  background-size: cover;
+  background-position: top;
+
+  position: relative;
+
+  @include respond(phone) {
+    clip-path: polygon(0 0, 100% 0%, 100% 85vh, 0 100%);
+  }
+
+  @media only screen and (min-resolution: 192dpi) {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-lightgreen, 0.8),
+        rgba($color-Darkgreen, 0.8)
+      ),
+      url('../img/hero.jpg');
+  }
+
+  &__logo-box {
+    position: absolute;
+    left: 8rem;
+    top: 4rem;
+  }
+
+  &__logo {
+    height: 5rem;
+  }
+}
